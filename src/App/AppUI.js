@@ -3,6 +3,9 @@ import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { CreateTodoButoon } from '../CreateTodoButoon';
 import { TodoItem } from '../TodoItem';
+import { TodosLoading } from '../TodosLoading'
+import { TodosError } from '../TodosError'
+import { EmptyTodos} from '../EmptyTodos'
 import React from 'react';
 
 
@@ -33,9 +36,14 @@ function AppUI ({
     />
 
     <TodoList>
-        {loading && <p>ESTAMOS CARGANDO .....</p>}
-        {error && <p>Hubo un error</p>}
-        {(!loading && searchedTodos.length === 0) && <p>Crea tu Primer TODO!</p>}
+        {loading && (
+        <>
+          <TodosLoading/>
+          <TodosLoading/>
+          <TodosLoading/>
+        </>)}
+        {error && <TodosError/>}
+        {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
         {searchedTodos.map(todo => (
         <TodoItem 
         key={todo.text} 
