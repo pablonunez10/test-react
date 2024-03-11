@@ -10,15 +10,16 @@
 }
 .Icon-container-check {
     position: absolute;
-    margin-top: -24px;
+    /* margin-top: -24px; */
     right: 90%;
+    
 }
 .Icon-container-check--active {
     color: #4caf50;
 }
 .Icon-container-delete {
     position: absolute;
-    margin-top: -24px;
+    /* margin-top: -24px; */
     right: 0;
 }
 .Icon-container-delete:hover {
@@ -27,7 +28,6 @@
 .Icon-svg {
     width: 24px;
     height: 24px;
-    
 }
 .Icon-container-check:hover .Icon-svg {
     fill: green;
